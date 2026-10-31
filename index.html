@@ -1224,7 +1224,7 @@
     $('revealBtn').addEventListener('click', reveal);
 
     /* Floating gold dust */
-    const pc = $('dust'), pk = pc.getContext('2d'); let PW, PH; const P = [];
+    const pc = $('dust'), pk = pc.getContext('2d'); let PW, PH; const P = []; const B = [];
     function sz() { PW = pc.width = innerWidth; PH = pc.height = innerHeight; } sz(); addEventListener('resize', sz);
     for (let i = 0; i < 34; i++) P.push({ x: Math.random() * PW, y: Math.random() * PH, r: .8 + Math.random() * 2.2, v: .15 + Math.random() * .4, s: .01 + Math.random() * .02, a: Math.random() * 6 });
     function rise2() {
@@ -1244,7 +1244,6 @@
 
 
     /* Gold confetti burst when the date is revealed */
-    const B = [];
     function burst() {
       const r = sc.getBoundingClientRect(), x0 = r.left + r.width / 2, y0 = r.top + r.height / 2, cols = ['#F5E3AE', '#D4AE5A', '#FFFFFF', '#C9A24D'];
       for (let i = 0; i < 110; i++) B.push({ x: x0, y: y0, vx: (Math.random() - .5) * 10, vy: -Math.random() * 9 - 2, r: 2 + Math.random() * 3, l: 1, c: cols[i % 4] });
